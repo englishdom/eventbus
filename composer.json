@@ -1,15 +1,10 @@
 {
-    "name": "englishdom/service-skeleton",
-    "description": "Skeleton for englishdom's service based on mezzio framework",
-    "type": "project",
+    "name": "englishdom/eventbus",
+    "description": "Interfaces and events between services of englishdom",
+    "type": "library",
     "license": "BSD-3-Clause",
     "keywords": [
-        "skeleton",
-        "middleware",
-        "psr",
-        "psr-7",
-        "psr-11",
-        "psr-15"
+        "events"
     ],
     "config": {
         "sort-packages": true
