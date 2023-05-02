@@ -4,23 +4,20 @@ declare(strict_types=1);
 
 namespace EventBus\Event;
 
-use EventBus\DTO\DtoInterface;
 use EventBus\Exception;
-use EventBus\Exception\InvalidEventCollectionException;
 use Laminas;
-use Laminas\Hydrator;
 
 abstract class BaseEvent implements EventInterface
 {
     public const EVENT_NAME = null;
 
-    protected string $requestId;
-    protected \DateTime $creationTime;
-    protected array $data = [];
+    protected $requestId;
+    protected $creationTime;
+    protected $data = [];
 
     public function __construct()
     {
-        $this->creationTime = new \DateTime();
+        $this->creationTime = new \DateTimeImmutable();
     }
 
     public function getEventName(): string
@@ -36,20 +33,20 @@ abstract class BaseEvent implements EventInterface
         return $this->requestId;
     }
 
-    public function setRequestId(string $requestId): self
+    public function setRequestId(string $requestId): EventInterface
     {
         $this->requestId = $requestId;
         return $this;
     }
 
-    public function getCreationTime(): \DateTime
+    public function getCreationTime(): \DateTimeImmutable
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(\DateTime $creationTime): self
+    public function setCreationTime(\DateTimeImmutable $time): EventInterface
     {
-        $this->creationTime = $creationTime;
+        $this->creationTime = $time;
         return $this;
     }
 
