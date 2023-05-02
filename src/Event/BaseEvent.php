@@ -15,10 +15,9 @@ abstract class BaseEvent implements EventInterface
     protected $creationTime;
     protected $data = [];
 
-    public function __construct(string $requestId)
+    public function __construct()
     {
         $this->creationTime = new \DateTimeImmutable();
-        $this->requestId = $requestId;
     }
 
     public function getEventName(): string
