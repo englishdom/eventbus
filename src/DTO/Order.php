@@ -41,7 +41,7 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getGateway(): string
+    public function getGateway(): ?string
     {
         return $this->gateway;
     }
