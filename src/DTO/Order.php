@@ -3,22 +3,21 @@ declare(strict_types=1);
 
 namespace EventBus\DTO;
 
-
 final class Order implements DtoInterface
 {
-    private int $id;
-    private ?string $promoCode;
-    private string $gateway;
-    private string $service;
-    private int $userId;
-    private float $price;
-    private float $amount;
-    private string $currency;
-    private string $country;
-    private ?string $description;
-    private \DateTimeInterface $dtCreated;
-    private ?\DateTimeInterface $dtPayment;
-    private string $status;
+    private $id;
+    private $promoCode;
+    private $gateway;
+    private $service;
+    private $userId;
+    private $price;
+    private $amount;
+    private $currency;
+    private $country;
+    private $description;
+    private $dtCreated;
+    private $dtPayment;
+    private $status;
 
     public function getId(): int
     {
@@ -47,7 +46,7 @@ final class Order implements DtoInterface
         return $this->gateway;
     }
 
-    public function setGateway(string $gateway): Order
+    public function setGateway(?string $gateway): Order
     {
         $this->gateway = $gateway;
         return $this;
