@@ -12,11 +12,13 @@ final class Order implements DtoInterface
     private $userId;
     private $price;
     private $amount;
+    private $bonusAmount;
     private $currency;
     private $country;
     private $description;
     private $dtCreated;
     private $dtPayment;
+    private $dtExpire;
     private $status;
 
     public function getId(): int
@@ -96,6 +98,17 @@ final class Order implements DtoInterface
         return $this;
     }
 
+    public function getBonusAmount(): float
+    {
+        return $this->bonusAmount;
+    }
+
+    public function setBonusAmount(float $bonusAmount): Order
+    {
+        $this->bonusAmount = $bonusAmount;
+        return $this;
+    }
+
     public function getCurrency(): string
     {
         return $this->currency;
@@ -148,6 +161,17 @@ final class Order implements DtoInterface
     public function setDtPayment(?\DateTimeInterface $dtPayment): Order
     {
         $this->dtPayment = $dtPayment;
+        return $this;
+    }
+
+    public function getDtExpire(): ?\DateTimeInterface
+    {
+        return $this->dtExpire;
+    }
+
+    public function setDtExpire(?\DateTimeInterface $dtExpire): Order
+    {
+        $this->dtExpire = $dtExpire;
         return $this;
     }
 
