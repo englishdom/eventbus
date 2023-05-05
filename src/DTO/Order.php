@@ -98,12 +98,12 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getBonusAmount(): float
+    public function getBonusAmount(): ?float
     {
         return $this->bonusAmount;
     }
 
-    public function setBonusAmount(float $bonusAmount): Order
+    public function setBonusAmount(?float $bonusAmount): Order
     {
         $this->bonusAmount = $bonusAmount;
         return $this;
