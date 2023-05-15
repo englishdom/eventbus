@@ -6,6 +6,7 @@ namespace EventBus\DTO;
 final class Order implements DtoInterface
 {
     private $id;
+    private $externalOrderId;
     private $promoCode;
     private $gateway;
     private $service;
@@ -29,6 +30,17 @@ final class Order implements DtoInterface
     public function setId(int $id): DtoInterface
     {
         $this->id = $id;
+        return $this;
+    }
+
+    public function getExternalOrderId(): ?string
+    {
+        return $this->externalOrderId;
+    }
+
+    public function setExternalOrderId($externalOrderId): Order
+    {
+        $this->externalOrderId = $externalOrderId;
         return $this;
     }
 
