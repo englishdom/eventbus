@@ -3,22 +3,24 @@ declare(strict_types=1);
 
 namespace EventBus\DTO;
 
-
 final class Order implements DtoInterface
 {
-    private int $id;
-    private ?string $promoCode;
-    private string $gateway;
-    private string $service;
-    private int $userId;
-    private float $price;
-    private float $amount;
-    private string $currency;
-    private string $country;
-    private ?string $description;
-    private \DateTimeInterface $dtCreated;
-    private ?\DateTimeInterface $dtPayment;
-    private string $status;
+    private $id;
+    private $externalOrderId;
+    private $promoCode;
+    private $gateway;
+    private $service;
+    private $userId;
+    private $price;
+    private $amount;
+    private $bonusAmount;
+    private $currency;
+    private $country;
+    private $description;
+    private $dtCreated;
+    private $dtPayment;
+    private $dtExpire;
+    private $status;
 
     public function getId(): int
     {
@@ -28,6 +30,17 @@ final class Order implements DtoInterface
     public function setId(int $id): DtoInterface
     {
         $this->id = $id;
+        return $this;
+    }
+
+    public function getExternalOrderId(): ?string
+    {
+        return $this->externalOrderId;
+    }
+
+    public function setExternalOrderId($externalOrderId): Order
+    {
+        $this->externalOrderId = $externalOrderId;
         return $this;
     }
 
@@ -42,12 +55,12 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getGateway(): string
+    public function getGateway(): ?string
     {
         return $this->gateway;
     }
 
-    public function setGateway(string $gateway): Order
+    public function setGateway(?string $gateway): Order
     {
         $this->gateway = $gateway;
         return $this;
@@ -97,6 +110,17 @@ final class Order implements DtoInterface
         return $this;
     }
 
+    public function getBonusAmount(): ?float
+    {
+        return $this->bonusAmount;
+    }
+
+    public function setBonusAmount(?float $bonusAmount): Order
+    {
+        $this->bonusAmount = $bonusAmount;
+        return $this;
+    }
+
     public function getCurrency(): string
     {
         return $this->currency;
@@ -108,12 +132,12 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->country;
     }
 
-    public function setCountry(string $country): Order
+    public function setCountry(?string $country): Order
     {
         $this->country = $country;
         return $this;
@@ -149,6 +173,17 @@ final class Order implements DtoInterface
     public function setDtPayment(?\DateTimeInterface $dtPayment): Order
     {
         $this->dtPayment = $dtPayment;
+        return $this;
+    }
+
+    public function getDtExpire(): ?\DateTimeInterface
+    {
+        return $this->dtExpire;
+    }
+
+    public function setDtExpire(?\DateTimeInterface $dtExpire): Order
+    {
+        $this->dtExpire = $dtExpire;
         return $this;
     }
 

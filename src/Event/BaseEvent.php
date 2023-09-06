@@ -17,7 +17,7 @@ abstract class BaseEvent implements EventInterface
 
     public function __construct()
     {
-        $this->creationTime = new \DateTimeImmutable();
+        $this->creationTime = new \DateTime();
     }
 
     public function getEventName(): string
@@ -39,12 +39,12 @@ abstract class BaseEvent implements EventInterface
         return $this;
     }
 
-    public function getCreationTime(): \DateTimeImmutable
+    public function getCreationTime(): \DateTime
     {
         return $this->creationTime;
     }
 
-    public function setCreationTime(\DateTimeImmutable $time): EventInterface
+    public function setCreationTime(\DateTime $time): EventInterface
     {
         $this->creationTime = $time;
         return $this;

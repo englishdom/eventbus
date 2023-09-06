@@ -6,16 +6,16 @@ namespace EventBus\DTO;
 
 final class User implements UserInterface
 {
-    private int $id;
-    private ?string $name;
-    private string $email;
+    private $id;
+    private $name;
+    private $email;
 
     public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(int $id): self
+    public function setId(int $id): DtoInterface
     {
         $this->id = $id;
         return $this;
@@ -26,7 +26,7 @@ final class User implements UserInterface
         return $this->name;
     }
 
-    public function setName(?string $name): self
+    public function setName(?string $name): UserInterface
     {
         $this->name = $name;
         return $this;
@@ -37,7 +37,7 @@ final class User implements UserInterface
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $email): UserInterface
     {
         $this->email = $email;
         return $this;
