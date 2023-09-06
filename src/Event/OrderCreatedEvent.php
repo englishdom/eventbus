@@ -21,6 +21,10 @@ class OrderCreatedEvent extends BaseEvent
             'dt_payment',
             new Hydrator\Strategy\DateTimeFormatterStrategy(\DateTime::RFC3339, null, true)
         );
+        $hydrator->addStrategy(
+            'dt_expire',
+            new Hydrator\Strategy\DateTimeFormatterStrategy(\DateTime::RFC3339, null, true)
+        );
         return new Hydrator\Strategy\CollectionStrategy(
             $hydrator,
             Order::class

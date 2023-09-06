@@ -132,12 +132,12 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->country;
     }
 
-    public function setCountry(string $country): Order
+    public function setCountry(?string $country): Order
     {
         $this->country = $country;
         return $this;
