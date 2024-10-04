@@ -88,12 +88,12 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getPrice(): float
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(float $price): Order
+    public function setPrice(?float $price): Order
     {
         $this->price = $price;
         return $this;
@@ -121,12 +121,12 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getCurrency(): string
+    public function getCurrency(): ?string
     {
         return $this->currency;
     }
 
-    public function setCurrency(string $currency): Order
+    public function setCurrency(?string $currency): Order
     {
         $this->currency = $currency;
         return $this;
