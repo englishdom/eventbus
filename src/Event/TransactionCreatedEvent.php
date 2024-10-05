@@ -6,9 +6,9 @@ namespace EventBus\Event;
 use EventBus\DTO\Transaction;
 use Laminas\Hydrator;
 
-class ApplyBonusEvent extends BaseEvent
+class TransactionCreatedEvent extends BaseEvent
 {
-    public const EVENT_NAME = 'apply_bonus';
+    public const EVENT_NAME = 'transaction_created';
 
     public function dtoStrategy(): Hydrator\Strategy\StrategyInterface
     {

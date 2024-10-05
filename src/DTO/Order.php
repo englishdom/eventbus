@@ -21,6 +21,7 @@ final class Order implements DtoInterface
     private $dtPayment;
     private $dtExpire;
     private $status;
+    private $packageType;
 
     public function getId(): int
     {
@@ -195,6 +196,17 @@ final class Order implements DtoInterface
     public function setStatus(string $status): Order
     {
         $this->status = $status;
+        return $this;
+    }
+
+    public function getPackageType()
+    {
+        return $this->packageType;
+    }
+
+    public function setPackageType($packageType): Order
+    {
+        $this->packageType = $packageType;
         return $this;
     }
 }
