@@ -22,6 +22,9 @@ final class Order implements DtoInterface
     private $dtExpire;
     private $status;
     private $packageType;
+    private $generatedType;
+    private $installments;
+    private $giftCertificate;
 
     public function getId(): int
     {
@@ -207,6 +210,60 @@ final class Order implements DtoInterface
     public function setPackageType($packageType): Order
     {
         $this->packageType = $packageType;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGeneratedType()
+    {
+        return $this->generatedType;
+    }
+
+    /**
+     * @param mixed $generatedType
+     * @return Order
+     */
+    public function setGeneratedType($generatedType)
+    {
+        $this->generatedType = $generatedType;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInstallments()
+    {
+        return $this->installments;
+    }
+
+    /**
+     * @param mixed $installments
+     * @return Order
+     */
+    public function setInstallments($installments)
+    {
+        $this->installments = $installments;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGiftCertificate()
+    {
+        return $this->giftCertificate;
+    }
+
+    /**
+     * @param mixed $giftCertificate
+     * @return Order
+     */
+    public function setGiftCertificate($giftCertificate)
+    {
+        $this->giftCertificate = $giftCertificate;
         return $this;
     }
 }

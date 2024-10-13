@@ -14,6 +14,7 @@ class Transaction implements DtoInterface
     private $currency;
     private $userId;
     private $dtCreated;
+    private $details;
 
     public function getId(): int
     {
@@ -146,6 +147,24 @@ class Transaction implements DtoInterface
     public function setDtCreated($dtCreated): Transaction
     {
         $this->dtCreated = $dtCreated;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDetails()
+    {
+        return $this->details;
+    }
+
+    /**
+     * @param mixed $details
+     * @return Transaction
+     */
+    public function setDetails($details)
+    {
+        $this->details = $details;
         return $this;
     }
 }
