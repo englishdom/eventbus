@@ -213,55 +213,23 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getGeneratedType()
-    {
-        return $this->generatedType;
-    }
-
-    /**
-     * @param mixed $generatedType
-     * @return Order
-     */
-    public function setGeneratedType($generatedType)
-    {
-        $this->generatedType = $generatedType;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getInstallments()
     {
         return $this->installments;
     }
 
-    /**
-     * @param mixed $installments
-     * @return Order
-     */
-    public function setInstallments($installments)
+    public function setInstallments(string $installments): Order
     {
         $this->installments = $installments;
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getGiftCertificate()
     {
         return $this->giftCertificate;
     }
 
-    /**
-     * @param mixed $giftCertificate
-     * @return Order
-     */
-    public function setGiftCertificate($giftCertificate)
+    public function setGiftCertificate(string $giftCertificate): Order
     {
         $this->giftCertificate = $giftCertificate;
         return $this;

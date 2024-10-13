@@ -162,7 +162,7 @@ class Transaction implements DtoInterface
      * @param mixed $details
      * @return Transaction
      */
-    public function setDetails($details)
+    public function setDetails(array $details): Transaction
     {
         $this->details = $details;
         return $this;
