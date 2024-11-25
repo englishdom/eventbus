@@ -29,7 +29,11 @@ $dto->setGateway('payu');
 $dto->setService('ed');
 $dto->setStatus('paid');
 $dto->setDescription(null);
-$dto->setPromoCode('test promo');
+$dto->setPackageType('manual');
+$dto->setPromoCodes([
+    (new \EventBus\DTO\PromoCode())->setId(1),
+    (new \EventBus\DTO\PromoCode())->setId(2),
+]);
 
 $event = new \EventBus\Event\OrderPaidEvent();
 $event->setRequestId('bnv2b3vt234gd');

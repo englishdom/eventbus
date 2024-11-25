@@ -7,7 +7,10 @@ final class Order implements DtoInterface
 {
     private $id;
     private $externalOrderId;
+    /* @deprecated promoCode variable after update payment service */
+    /* @see promoCodes variable */
     private $promoCode;
+    private $promoCodes;
     private $gateway;
     private $service;
     private $userId;
@@ -48,14 +51,42 @@ final class Order implements DtoInterface
         return $this;
     }
 
+    /**
+     * @deprecated Need remove after update payment service
+     */
     public function getPromoCode(): ?string
     {
         return $this->promoCode;
     }
 
+    /**
+     * @deprecated Need remove after update payment service
+     */
     public function setPromoCode(?string $promoCode): Order
     {
         $this->promoCode = $promoCode;
+        return $this;
+    }
+
+    public function getPromoCodes(): ?array
+    {
+        return $this->promoCodes;
+    }
+
+    public function setPromoCodes(?array $promoCodes): Order
+    {
+        $this->promoCodes = $promoCodes;
+        return $this;
+    }
+
+    public function getGeneratedType(): ?string
+    {
+        return $this->generatedType;
+    }
+
+    public function setGeneratedType(?string $generatedType): Order
+    {
+        $this->generatedType = $generatedType;
         return $this;
     }
 
@@ -202,34 +233,34 @@ final class Order implements DtoInterface
         return $this;
     }
 
-    public function getPackageType()
+    public function getPackageType(): ?string
     {
         return $this->packageType;
     }
 
-    public function setPackageType($packageType): Order
+    public function setPackageType(?string $packageType): Order
     {
         $this->packageType = $packageType;
         return $this;
     }
 
-    public function getInstallments()
+    public function getInstallments(): ?string
     {
         return $this->installments;
     }
 
-    public function setInstallments(string $installments): Order
+    public function setInstallments(?string $installments): Order
     {
         $this->installments = $installments;
         return $this;
     }
 
-    public function getGiftCertificate()
+    public function getGiftCertificate(): ?string
     {
         return $this->giftCertificate;
     }
 
-    public function setGiftCertificate(string $giftCertificate): Order
+    public function setGiftCertificate(?string $giftCertificate): Order
     {
         $this->giftCertificate = $giftCertificate;
         return $this;

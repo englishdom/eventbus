@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace EventBus\DTO;
 
-class Transaction implements DtoInterface
+final class Transaction implements DtoInterface
 {
     private $id;
     private $service;
