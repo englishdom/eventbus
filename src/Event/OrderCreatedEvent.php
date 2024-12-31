@@ -28,9 +28,11 @@ class OrderCreatedEvent extends BaseEvent
         );
         $hydrator->addStrategy(
             'promo_codes',
-            new Hydrator\Strategy\CollectionStrategy(
-                new Hydrator\ClassMethodsHydrator(),
-                PromoCode::class
+            new Hydrator\Strategy\NullableStrategy(
+                new Hydrator\Strategy\CollectionStrategy(
+                    new Hydrator\ClassMethodsHydrator(),
+                    PromoCode::class
+                )
             )
         );
         return new Hydrator\Strategy\CollectionStrategy(

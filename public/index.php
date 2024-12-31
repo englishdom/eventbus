@@ -30,10 +30,7 @@ $dto->setService('ed');
 $dto->setStatus('paid');
 $dto->setDescription(null);
 $dto->setPackageType('manual');
-$dto->setPromoCodes([
-    (new \EventBus\DTO\PromoCode())->setId(1),
-    (new \EventBus\DTO\PromoCode())->setId(2),
-]);
+$dto->setPromoCodes(null);
 
 $event = new \EventBus\Event\OrderPaidEvent();
 $event->setRequestId('bnv2b3vt234gd');
