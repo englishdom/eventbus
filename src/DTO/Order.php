@@ -28,6 +28,7 @@ final class Order implements DtoInterface
     private $generatedType;
     private $installments;
     private $giftCertificate;
+    private $paidNumberByUser = 0;
 
     public function getId(): int
     {
@@ -263,6 +264,17 @@ final class Order implements DtoInterface
     public function setGiftCertificate(?string $giftCertificate): Order
     {
         $this->giftCertificate = $giftCertificate;
+        return $this;
+    }
+
+    public function getPaidNumberByUser(): int
+    {
+        return $this->paidNumberByUser;
+    }
+
+    public function setPaidNumberByUser(int $paidNumberByUser): Order
+    {
+        $this->paidNumberByUser = $paidNumberByUser;
         return $this;
     }
 }
