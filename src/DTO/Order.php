@@ -29,6 +29,7 @@ final class Order implements DtoInterface
     private $installments;
     private $giftCertificate;
     private $paidNumberByUser = 0;
+    private $details;
 
     public function getId(): int
     {
@@ -275,6 +276,17 @@ final class Order implements DtoInterface
     public function setPaidNumberByUser(int $paidNumberByUser): Order
     {
         $this->paidNumberByUser = $paidNumberByUser;
+        return $this;
+    }
+
+    public function getDetails(): ?array
+    {
+        return $this->details;
+    }
+
+    public function setDetails(?array $details): Order
+    {
+        $this->details = $details;
         return $this;
     }
 }
