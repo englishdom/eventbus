@@ -6,6 +6,7 @@ namespace EventBus\DTO;
 final class Card implements DtoInterface
 {
     private $id;
+    private $userId;
     private $service;
     private $status;
     private $hiddenNumber;
@@ -21,6 +22,17 @@ final class Card implements DtoInterface
     public function setId(int $id): DtoInterface
     {
         $this->id = $id;
+        return $this;
+    }
+
+    public function getUserId(): int
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(int $userId): Card
+    {
+        $this->userId = $userId;
         return $this;
     }
 
