@@ -16,6 +16,11 @@ final class PromoCode implements DtoInterface
     private $generatedType;
     private $details;
     private $paymentType;
+    private $activations;
+    private $creatorId;
+    private $dtCreated;
+    private $startDate;
+    private $finishDate;
 
     public function getId(): int
     {
@@ -137,6 +142,61 @@ final class PromoCode implements DtoInterface
     public function setPaymentType(string $paymentType): PromoCode
     {
         $this->paymentType = $paymentType;
+        return $this;
+    }
+
+    public function getDtCreated(): \DateTimeInterface
+    {
+        return $this->dtCreated;
+    }
+
+    public function setDtCreated(\DateTimeInterface $dtCreated): PromoCode
+    {
+        $this->dtCreated = $dtCreated;
+        return $this;
+    }
+
+    public function getActivations(): ?int
+    {
+        return $this->activations;
+    }
+
+    public function setActivations(?int $activations): PromoCode
+    {
+        $this->activations = $activations;
+        return $this;
+    }
+
+    public function getCreatorId(): ?int
+    {
+        return $this->creatorId;
+    }
+
+    public function setCreatorId(?int $creatorId): PromoCode
+    {
+        $this->creatorId = $creatorId;
+        return $this;
+    }
+
+    public function getStartDate(): ?\DateTimeInterface
+    {
+        return $this->startDate;
+    }
+
+    public function setStartDate(?\DateTimeInterface $startDate): PromoCode
+    {
+        $this->startDate = $startDate;
+        return $this;
+    }
+
+    public function getFinishDate(): ?\DateTimeInterface
+    {
+        return $this->finishDate;
+    }
+
+    public function setFinishDate(?\DateTimeInterface $finishDate): PromoCode
+    {
+        $this->finishDate = $finishDate;
         return $this;
     }
 }
