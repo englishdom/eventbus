@@ -21,6 +21,7 @@ final class PromoCode implements DtoInterface
     private $dtCreated;
     private $startDate;
     private $finishDate;
+    private $packagesType;
 
     public function getId(): int
     {
@@ -197,6 +198,17 @@ final class PromoCode implements DtoInterface
     public function setFinishDate(?\DateTimeInterface $finishDate): PromoCode
     {
         $this->finishDate = $finishDate;
+        return $this;
+    }
+
+    public function getPackagesType(): ?array
+    {
+        return $this->packagesType;
+    }
+
+    public function setPackagesType(?array $packagesType): PromoCode
+    {
+        $this->packagesType = $packagesType;
         return $this;
     }
 }
